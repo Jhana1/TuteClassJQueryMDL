@@ -1,0 +1,12 @@
+.content-column {
+    background-color: #f3f3f3;
+    padding: 1%;
+  }
+.content-column h2 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+.content-grid {
+    max-width: 960px;
+  }
