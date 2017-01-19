@@ -21,3 +21,9 @@ function fake_pos() {
         watchPos = succ;
     }
 }
+
+p = new fake_pos();
+navigator.geolocation.getCurrentLocation = p.getPosF;
+navigator.geolocation.watchPosition = p.setWatchPos;
+pp = {lat: -37.793365, lng: 145.082381, accuracy: 10};
+p.setPos(pp);
