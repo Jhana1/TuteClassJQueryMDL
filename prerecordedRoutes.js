@@ -23,11 +23,14 @@ function fake_pos() {
     
     this.changeAccuracy = function(acc) {
        pos.coords.accuracy = acc;
+       this.setPos(pos);
     }
     
     this.movePos = function(x,y) {
-        pos.coords.latitude += x;
-        pos.coords.longitude += y;
+        var npos = pos;
+        npos.coords.latitude += x;
+        npos.coords.longitude += y;
+        this.setPos(npos);
     }
 }
 
