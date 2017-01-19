@@ -2,22 +2,22 @@ function fake_pos() {
     var pos;
     var watchPos;
     
-    function getPosF(succ) {
+    this.getPosF = function(succ) {
         return succ(c_pos) 
     }
     
-    function getPos() {
+    this.getPos = function(){
         return pos;
     }
     
-    function setPos(_pos) {
+    this.setPos = function(_pos) {
         pos = _pos;
         if (watchPos) {
             watchPos(pos); 
         }
     }
     
-    function setWatchPos(succ) {
+    this.setWatchPos = function(succ) {
         watchPos = succ;
     }
 }
