@@ -3,7 +3,7 @@ function fake_pos() {
     var watchPos;
     
     this.getPosF = function(succ) {
-        return succ(c_pos) 
+        return succ(pos) 
     }
     
     this.getPos = function(){
@@ -11,7 +11,7 @@ function fake_pos() {
     }
     
     this.setPos = function(_pos) {
-        pos = _pos;
+        pos = {coords: _pos};
         if (watchPos) {
             watchPos(pos); 
         }
@@ -20,10 +20,18 @@ function fake_pos() {
     this.setWatchPos = function(succ) {
         watchPos = succ;
     }
+    
+    this.changeAccurace = function(acc) {
+        this.pos.coords.accuracy = acc;
+    }
+    
+    this.movePos = function(x,y) {
+        this.pos.coords.latitude += x;
+        this.pos.coords.longitude += y;
 }
 
 p = new fake_pos();
 navigator.geolocation.getCurrentLocation = p.getPosF;
 navigator.geolocation.watchPosition = p.setWatchPos;
-pp = {lat: -37.793365, lng: 145.082381, accuracy: 10};
+pp = {latitude: -37.793365, longitude: 145.082381, accuracy: 10};
 p.setPos(pp);
