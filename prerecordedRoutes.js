@@ -32,7 +32,7 @@ function fake_pos() {
         npos.coords.longitude += y;
         this.setPos(npos.coords);
     }
-}
+} 
 
 p = new fake_pos();
 navigator.geolocation.getCurrentPosition = p.getPosF;
