@@ -20,7 +20,7 @@ function fake_pos() {
     this.setWatchPos = function(succ) {
         watchPos = succ;
     }
-    
+     
     this.changeAccuracy = function(acc) {
        pos.coords.accuracy = acc;
        this.setPos(pos.coords);
