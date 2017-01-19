@@ -1,6 +1,6 @@
 function fake_pos() {
     var pos;
-    var watchPos;
+    var watchPos = [];
     
     this.getPosF = function(succ) {
         return succ(pos) 
@@ -12,13 +12,13 @@ function fake_pos() {
     
     this.setPos = function(_pos) {
         pos = {coords: _pos};
-        if (watchPos) {
-            watchPos(pos); 
+        for (var i in watchPos) {
+            watchPos[i](pos);
         }
     }
     
     this.setWatchPos = function(succ) {
-        watchPos = succ;
+        watchPos.push(succ);
     }
      
     this.changeAccuracy = function(acc) {
