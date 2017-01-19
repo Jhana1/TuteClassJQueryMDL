@@ -32,7 +32,7 @@ function fake_pos() {
 }
 
 p = new fake_pos();
-navigator.geolocation.getCurrentLocation = p.getPosF;
+navigator.geolocation.getCurrentPosition = p.getPosF;
 navigator.geolocation.watchPosition = p.setWatchPos;
 pp = {latitude: -37.793365, longitude: 145.082381, accuracy: 10};
 p.setPos(pp);
