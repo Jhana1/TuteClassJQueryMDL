@@ -22,7 +22,7 @@ function fake_pos() {
     }
     
     this.changeAccuracy = function(acc) {
-        this.pos.coords.accuracy = acc;
+       pos.coords.accuracy = acc;
     }
     
     this.movePos = function(x,y) {
