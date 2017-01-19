@@ -26,8 +26,8 @@ function fake_pos() {
     }
     
     this.movePos = function(x,y) {
-        this.pos.coords.latitude += x;
-        this.pos.coords.longitude += y;
+        pos.coords.latitude += x;
+        pos.coords.longitude += y;
     }
 }
 
